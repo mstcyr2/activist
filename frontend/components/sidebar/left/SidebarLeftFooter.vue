@@ -1,27 +1,32 @@
 <template>
   <footer
-    class="p-1 transition-all duration-500"
+    class="transition-all duration-500"
     :class="{
-      'pr-4': sidebarContentScrollable,
+      'pr-5': sidebarContentScrollable,
     }"
   >
     <div
-      class="elem-shadow-sm flex w-full flex-col justify-center space-y-1 rounded-md bg-light-layer-2 p-1 dark:bg-dark-layer-2"
+      class="p-1"
+      :class="{'shadow-[-2px_-1px_2px_0_#3f3f46]': sidebarContentScrollable}"
     >
-      <DropdownCreate
-        v-if="userIsSignedIn"
-        class="w-full"
-        :location="DropdownLocation.SIDE_LEFT_MENU"
-      />
-      <DropdownInfo
-        class="w-full"
-        :location="DropdownLocation.SIDE_LEFT_MENU"
-      />
-      <DropdownUserOptions
-        class="w-full"
-        :location="DropdownLocation.SIDE_LEFT_MENU"
-        :userIsSignedIn="userIsSignedIn"
-      />
+      <div
+        class="elem-shadow-sm flex w-full flex-col justify-center space-y-1 rounded-md bg-light-layer-2 p-1 dark:bg-dark-layer-2"
+      >
+        <DropdownCreate
+          v-if="userIsSignedIn"
+          class="w-full"
+          :location="DropdownLocation.SIDE_LEFT_MENU"
+        />
+        <DropdownInfo
+          class="w-full"
+          :location="DropdownLocation.SIDE_LEFT_MENU"
+        />
+        <DropdownUserOptions
+          class="w-full"
+          :location="DropdownLocation.SIDE_LEFT_MENU"
+          :userIsSignedIn="userIsSignedIn"
+        />
+      </div>
     </div>
   </footer>
 </template>
